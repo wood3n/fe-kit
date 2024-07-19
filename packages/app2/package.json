@@ -1,0 +1,22 @@
+{
+  "name": "pnpmtemp-app2",
+  "version": "1.0.0",
+  "author": "oxyg3n",
+  "license": "MIT",
+  "type": "module",
+  "exports": "./dist/index.js",
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc ./src/index.ts --target es6 --outDir ./dist --sourcemap --declaration --declarationDir ./dist"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
+}

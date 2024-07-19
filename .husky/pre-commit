@@ -1,0 +1,3 @@
+pnpm run coverage
+
+pnpm exec lint-staged
