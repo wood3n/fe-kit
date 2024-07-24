@@ -1,6 +1,8 @@
 {
-  "name": "@oxygen/dev-components",
+  "name": "@dev-kit/components",
   "version": "1.0.0",
+  "author": "oxygen",
+  "license": "MIT",
   "description": "dev components",
   "main": "index.js",
   "keywords": [
@@ -11,9 +13,17 @@
     "typescriptreact",
     "react components"
   ],
-  "author": "oxygen",
-  "license": "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1"
+  },
+  "peerDependencies": {
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1"
   }
 }

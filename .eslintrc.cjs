@@ -3,27 +3,38 @@ module.exports = {
     "eslint:recommended",
     "plugin:@typescript-eslint/strict",
     "plugin:@typescript-eslint/stylistic",
-    "plugin:import-x/recommended",
-    "plugin:import-x/typescript",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended",
   ],
   parser: "@typescript-eslint/parser",
-  plugins: ["@typescript-eslint", "simple-import-sort"],
+  plugins: ["@typescript-eslint", "simple-import-sort", "jsx-a11y"],
   root: true,
   parserOptions: {
     sourceType: "module",
     ecmaVersion: "latest",
     project: ["./tsconfig.eslint.json", "./packages/*/tsconfig.json"],
     tsconfigRootDir: __dirname,
+    ecmaFeatures: {
+      jsx: true,
+    },
   },
   settings: {
     "import/parsers": {
       "@typescript-eslint/parser": [".ts", ".tsx"],
     },
-    "import-x/resolver": {
+    "import/resolver": {
+      node: true,
       typescript: {
         alwaysTryTypes: true,
         project: ["./packages/*/tsconfig.json"],
       },
+    },
+    react: {
+      pragma: "React", // Pragma to use, default to "React"
+      fragment: "Fragment", // Fragment to use (may be a property of <pragma>), default to "Fragment"
+      version: "16.8.0",
     },
   },
   overrides: [
@@ -50,10 +61,10 @@ module.exports = {
       },
     ],
     "object-curly-spacing": ["error", "always"],
-    "import-x/no-cycle": 0,
-    "import-x/prefer-default-export": 0,
-    "import-x/no-extraneous-dependencies": 0,
-    "import-x/extensions": [
+    "import/no-cycle": 0,
+    "import/prefer-default-export": 0,
+    "import/no-extraneous-dependencies": 0,
+    "import/extensions": [
       "error",
       "ignorePackages",
       {

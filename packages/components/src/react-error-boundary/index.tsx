@@ -1,9 +1,39 @@
 import React from "react";
 
-class ErrorBoundary extends React.Component<Props> {
-  constructor(props) {
-    super(props);
-  }
+export interface ErrorBoundaryProps {
+  /** error fallback render */
+  fallback: React.ReactNode;
+  /** default children */
+  children: React.ReactNode;
+  /** do sth. on error */
+  onError?: (error: Error, errorInfo: React.ErrorInfo) => void;
 }
 
-export default ErrorBoundary;
+interface StateType {
+  hasError: boolean;
+}
+
+export class ErrorBoundary extends React.Component<ErrorBoundaryProps, StateType> {
+  constructor(props: ErrorBoundaryProps) {
+    super(props);
+    this.state = {
+      hasError: false,
+    };
+  }
+
+  static getDerivedStateFromError(error: unknown) {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error: Error, errorInfo: React.ErrorInfo): void {
+    this.props.onError?.(error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return this.props.fallback;
+    }
+
+    return this.props.children;
+  }
+}

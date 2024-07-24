@@ -1,4 +1,4 @@
-interface Options {
+export interface XhrOptions {
   method?: string;
   onSuccess?: (response: any) => void;
   onError?: (error: string) => void;
@@ -6,12 +6,12 @@ interface Options {
   responseType?: XMLHttpRequestResponseType;
 }
 
-export const xhr = (url: string, options?: Options) => {
+export const xhr = (url: string, options?: XhrOptions) => {
   const { method = "GET", onSuccess, onError, onProgress, responseType = "" } = options || {};
 
   const xhrInstance = new XMLHttpRequest();
   xhrInstance.responseType = responseType;
-  xhrInstance.open(method, url);
+  xhrInstance.open(method, url, true);
 
   xhrInstance.onload = () => {
     const status = xhrInstance.status;

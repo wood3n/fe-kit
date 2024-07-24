@@ -1,15 +1,9 @@
 {
-  "name": "@oxygen/dev-utils",
+  "name": "@dev-kit/utils",
   "version": "1.0.0",
+  "author": "oxygen",
+  "license": "MIT",
   "description": "dev utils",
-  "type": "module",
-  "main": "dist/index.js",
-  "files": [
-    "dist"
-  ],
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [
     "javascript",
     "javascriptreact",
@@ -17,6 +11,12 @@
     "typescriptreact",
     "utils"
   ],
-  "author": "oxygen",
-  "license": "MIT"
+  "type": "module",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
 }
