@@ -2,7 +2,6 @@
   "compilerOptions": {
     "target": "ES6",
     "lib": ["ESNext", "DOM"],
-    "jsx": "react-jsx",
     "module": "preserve",
     "moduleResolution": "node",
     "resolveJsonModule": true,
@@ -13,6 +12,5 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true
-  },
-  "files": ["./types/module.d.ts"]
+  }
 }

@@ -1,1 +1,1 @@
-# dev components
+# @dev-kit/components

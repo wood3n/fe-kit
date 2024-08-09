@@ -1,28 +1,29 @@
 {
-  "name": "pnpm-monorepo-template",
+  "name": "dev-kit",
   "private": true,
   "author": "oxyg3n",
   "license": "MIT",
-  "description": "pnpm monorepo template",
+  "description": "frontend development utils and components",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wood3n/pnpm-monorepo-template.git"
+    "url": "https://github.com/wood3n/dev-kit.git"
   },
   "keywords": [
     "typescript",
     "frontend",
-    "frontend monorepo",
-    "pnpm",
-    "monorepo",
-    "template"
+    "react",
+    "react components",
+    "js"
   ],
   "type": "module",
   "scripts": {
     "prepare": "husky",
     "test": "vitest",
     "coverage": "vitest run --coverage",
-    "build:app1": "pnpm --filter app1 run build",
-    "build:app2": "pnpm --filter app2 run build"
+    "dev:components": "pnpm --filter @dev-kit/components run dev",
+    "dev:utils": "pnpm --filter @dev-kit/utils run dev",
+    "build:components": "pnpm --filter @dev-kit/components run build",
+    "build:utils": "pnpm --filter @dev-kit/utils run build"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
@@ -43,6 +44,7 @@
     "lint-staged": "^15.2.7",
     "prettier": "^3.3.2",
     "prettier-eslint-cli": "^8.0.1",
+    "prettier-plugin-tailwindcss": "^0.6.5",
     "semantic-release": "^24.0.0",
     "semantic-release-monorepo": "^8.0.2",
     "typescript": "^5.5.2",
