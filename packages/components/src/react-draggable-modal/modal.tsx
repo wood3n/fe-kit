@@ -2,14 +2,27 @@ import type React from "react";
 
 import { useDraggable } from "@dnd-kit/core";
 
-interface Props {
-  top: number;
-  left: number;
+export interface ModalProps {
+  /**
+   * modal content
+   */
+  children?: React.ReactNode;
+  /**
+   * modal content wrapper class
+   */
   className?: string;
+  /**
+   * modal content wrapper style
+   */
   style?: React.CSSProperties;
 }
 
-const Modal = ({ top, left, className, style }: Props) => {
+interface Props extends ModalProps {
+  top: number;
+  left: number;
+}
+
+const Modal = ({ top, left, children, className, style }: Props) => {
   const { attributes, isDragging, listeners, setNodeRef, transform } = useDraggable({
     id: "react-dnd-modal-x",
   });
@@ -17,9 +30,7 @@ const Modal = ({ top, left, className, style }: Props) => {
   return (
     <div
       ref={setNodeRef}
-      {...listeners}
-      {...attributes}
-      className="fixed resize overflow-auto bg-white p-6 shadow"
+      className="fixed resize overflow-auto"
       style={{
         top,
         left,
@@ -27,8 +38,8 @@ const Modal = ({ top, left, className, style }: Props) => {
         transform: `translate(${transform?.x ?? 0}px, ${transform?.y ?? 0}px)`,
       }}
     >
-      <div className={className} style={style}>
-        内容
+      <div {...listeners} {...attributes} className={className} style={style}>
+        {children}
       </div>
     </div>
   );

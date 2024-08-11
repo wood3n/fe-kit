@@ -1,7 +1,0 @@
-{
-  "extends": "./tsconfig.base.json",
-  "compilerOptions": {
-    "noEmit": true
-  },
-  "include": [".eslintrc.cjs", "commitlint.config.js", "vitest.config.ts", "release.config.js"]
-}

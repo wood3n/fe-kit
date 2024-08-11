@@ -15,7 +15,7 @@ module.exports = {
   parserOptions: {
     sourceType: "module",
     ecmaVersion: "latest",
-    project: ["./tsconfig.eslint.json", "./packages/*/tsconfig.json"],
+    project: ["./tsconfig.json", "./packages/*/tsconfig.json"],
     tsconfigRootDir: __dirname,
     ecmaFeatures: {
       jsx: true,
@@ -26,10 +26,12 @@ module.exports = {
       "@typescript-eslint/parser": [".ts", ".tsx"],
     },
     "import/resolver": {
-      node: true,
+      node: {
+        project: ["tsconfig.json", "./packages/*/tsconfig.json"],
+      },
       typescript: {
         alwaysTryTypes: true,
-        project: ["./packages/*/tsconfig.json"],
+        project: ["tsconfig.json", "./packages/*/tsconfig.json"],
       },
     },
     react: {

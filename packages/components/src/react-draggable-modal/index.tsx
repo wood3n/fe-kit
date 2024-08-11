@@ -4,17 +4,19 @@ import ReactDOM from "react-dom";
 import { DndContext, PointerSensor, useSensor, useSensors } from "@dnd-kit/core";
 import type { Coordinates } from "@dnd-kit/utilities";
 
-import Modal from "./modal";
+import Modal, { type ModalProps } from "./modal";
 
-interface Props {
+export interface ReactDraggableModalProps extends ModalProps {
+  /**
+   * visible state
+   */
   isOpen: boolean;
-  onClose: VoidFunction;
 }
 
 /**
  * draggable modal
  */
-const ReactDraggableModal = ({ isOpen, onClose }: Props) => {
+const ReactDraggableModal = ({ isOpen, ...modalProps }: ReactDraggableModalProps) => {
   const [{ x, y }, setCoordinates] = useState<Coordinates>({ x: 100, y: 100 });
 
   const sensors = useSensors(
@@ -35,7 +37,7 @@ const ReactDraggableModal = ({ isOpen, onClose }: Props) => {
         });
       }}
     >
-      {isOpen && ReactDOM.createPortal(<Modal top={y} left={x} />, document.body)}
+      {isOpen && ReactDOM.createPortal(<Modal top={y} left={x} {...modalProps} />, document.body)}
     </DndContext>
   );
 };

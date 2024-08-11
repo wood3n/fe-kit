@@ -13,7 +13,7 @@ interface StateType {
   hasError: boolean;
 }
 
-export class ErrorBoundary extends React.Component<ErrorBoundaryProps, StateType> {
+class ErrorBoundary extends React.Component<ErrorBoundaryProps, StateType> {
   constructor(props: ErrorBoundaryProps) {
     super(props);
     this.state = {
@@ -37,3 +37,5 @@ export class ErrorBoundary extends React.Component<ErrorBoundaryProps, StateType
     return this.props.children;
   }
 }
+
+export default ErrorBoundary;

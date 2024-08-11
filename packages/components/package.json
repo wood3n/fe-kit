@@ -2,6 +2,14 @@
   "name": "@dev-kit/components",
   "version": "1.0.0",
   "type": "module",
+  "main": "lib/index.cjs",
+  "module": "es/index.js",
+  "typings": "es/index.d.ts",
+  "files": [
+    "dist",
+    "es",
+    "lib"
+  ],
   "scripts": {
     "dev": "storybook dev",
     "build": "tsc -b && vite build",
@@ -18,7 +26,6 @@
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^8.2.8",
-    "@storybook/addon-interactions": "^8.2.8",
     "@storybook/addon-links": "^8.2.8",
     "@storybook/addon-onboarding": "^8.2.8",
     "@storybook/blocks": "^8.2.8",

@@ -23,6 +23,7 @@
     "dev:components": "pnpm --filter @dev-kit/components run dev",
     "dev:utils": "pnpm --filter @dev-kit/utils run dev",
     "build:components": "pnpm --filter @dev-kit/components run build",
+    "build:components-site": "pnpm --filter @dev-kit/components run build-storybook",
     "build:utils": "pnpm --filter @dev-kit/utils run build"
   },
   "devDependencies": {
@@ -35,6 +36,7 @@
     "@vitest/coverage-istanbul": "^1.6.0",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
+    "eslint-import-resolver-alias": "^1.1.2",
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-jsx-a11y": "^6.9.0",
@@ -47,12 +49,16 @@
     "prettier-plugin-tailwindcss": "^0.6.5",
     "semantic-release": "^24.0.0",
     "semantic-release-monorepo": "^8.0.2",
+    "stylelint": "^16.8.1",
+    "stylelint-config-standard": "^36.0.1",
+    "stylelint-prettier": "^5.0.2",
     "typescript": "^5.5.2",
     "typescript-eslint": "^7.13.1",
     "vitest": "^1.6.0"
   },
   "lint-staged": {
-    "**/*.{js,jsx,ts,tsx,json}": "prettier-eslint **/*.{js,jsx,ts,tsx,json} --write"
+    "**/*.{js,jsx,ts,tsx,json}": "prettier-eslint **/*.{js,jsx,ts,tsx,json} --write",
+    "**/*.{css,scss,sass,less}": "stylelint --fix"
   },
   "engines": {
     "node": ">=18"
