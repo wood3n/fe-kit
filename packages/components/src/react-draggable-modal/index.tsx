@@ -16,7 +16,7 @@ export interface ReactDraggableModalProps extends ModalProps {
 /**
  * draggable modal
  */
-const ReactDraggableModal = ({ isOpen, ...modalProps }: ReactDraggableModalProps) => {
+export const ReactDraggableModal = ({ isOpen, ...modalProps }: ReactDraggableModalProps) => {
   const [{ x, y }, setCoordinates] = useState<Coordinates>({ x: 100, y: 100 });
 
   const sensors = useSensors(
@@ -41,5 +41,3 @@ const ReactDraggableModal = ({ isOpen, ...modalProps }: ReactDraggableModalProps
     </DndContext>
   );
 };
-
-export default ReactDraggableModal;

@@ -1,4 +1,4 @@
-const project = ["./tsconfig.node.json", "./packages/*/tsconfig.json", "./packages/*/tsconfig.eslint.json"];
+const project = ["./tsconfig.node.json", "./packages/*/tsconfig.json"];
 
 module.exports = {
   extends: [

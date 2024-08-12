@@ -2,9 +2,10 @@
   "name": "@dev-kit/components",
   "version": "1.0.0",
   "type": "module",
-  "main": "lib/index.cjs",
+  "main": "lib/index.js",
   "module": "es/index.js",
-  "typings": "es/index.d.ts",
+  "types": "es/index.d.ts",
+  "unpkg": "./dist/index.js",
   "files": [
     "dist",
     "es",
@@ -12,9 +13,12 @@
   ],
   "scripts": {
     "dev": "storybook dev",
-    "build": "tsc -b && vite build",
+    "build": "modern build",
     "build-storybook": "storybook build"
   },
+  "sideEffects": [
+    "**/*.css"
+  ],
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
@@ -25,6 +29,8 @@
     "clsx": "^2.1.1"
   },
   "devDependencies": {
+    "@modern-js/module-tools": "^2.58.0",
+    "@modern-js/plugin-tailwindcss": "^2.58.0",
     "@storybook/addon-essentials": "^8.2.8",
     "@storybook/addon-links": "^8.2.8",
     "@storybook/addon-onboarding": "^8.2.8",

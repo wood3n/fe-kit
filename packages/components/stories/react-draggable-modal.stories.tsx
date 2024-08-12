@@ -2,13 +2,14 @@ import { useState } from "react";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
-import ReactDraggableModal from "../src/react-draggable-modal";
+import { ReactDraggableModal } from "../src/react-draggable-modal";
 
 const meta: Meta<typeof ReactDraggableModal> = {
   title: "react-draggable-modal",
   component: ReactDraggableModal,
   tags: ["autodocs"],
 };
+
 export default meta;
 
 type Story = StoryObj<typeof ReactDraggableModal>;
