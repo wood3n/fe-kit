@@ -1,3 +1,5 @@
+const project = ["./tsconfig.node.json", "./packages/*/tsconfig.json", "./packages/*/tsconfig.eslint.json"];
+
 module.exports = {
   extends: [
     "eslint:recommended",
@@ -15,7 +17,7 @@ module.exports = {
   parserOptions: {
     sourceType: "module",
     ecmaVersion: "latest",
-    project: ["./tsconfig.json", "./packages/*/tsconfig.json"],
+    project,
     tsconfigRootDir: __dirname,
     ecmaFeatures: {
       jsx: true,
@@ -27,11 +29,11 @@ module.exports = {
     },
     "import/resolver": {
       node: {
-        project: ["tsconfig.json", "./packages/*/tsconfig.json"],
+        project,
       },
       typescript: {
         alwaysTryTypes: true,
-        project: ["tsconfig.json", "./packages/*/tsconfig.json"],
+        project,
       },
     },
     react: {

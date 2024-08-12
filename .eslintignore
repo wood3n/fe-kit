@@ -1,2 +1,11 @@
 dist
+es
+lib
+assets
+public
 coverage
+storybook-static
+
+node_modules
+**/node_modules
+
