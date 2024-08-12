@@ -6,7 +6,7 @@ on:
     branches:
       - "master" # Replace with the branch you want to deploy from
     paths:
-      - "packages/components/stories"
+      - "packages/components/stories/**"
 
 permissions:
   contents: read
