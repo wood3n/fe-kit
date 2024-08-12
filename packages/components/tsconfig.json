@@ -4,5 +4,5 @@
     "declaration": true,
     "emitDeclarationOnly": true
   },
-  "include": ["src", "stories"]
+  "include": [".storybook", "src", "stories"]
 }
