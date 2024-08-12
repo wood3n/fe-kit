@@ -18,7 +18,7 @@ const BasicUsage = () => {
 
   return (
     <>
-      <button type="button" className="rounded-sm bg-gray-300 p-2" onClick={() => setIsOpen(true)}>
+      <button type="button" className="rounded-lg bg-gray-300 p-2" onClick={() => setIsOpen(true)}>
         打开 Modal
       </button>
       <ReactDraggableModal isOpen={isOpen} className="h-full bg-blue-300 p-6">

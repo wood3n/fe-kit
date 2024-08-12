@@ -17,7 +17,7 @@ const ErrorComponent = () => {
 
 const BasicUsage = () => {
   return (
-    <ErrorBoundary fallback="出错了！">
+    <ErrorBoundary fallback="fallback：出错了！">
       <ErrorComponent />
     </ErrorBoundary>
   );
