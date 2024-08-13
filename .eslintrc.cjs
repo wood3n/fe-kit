@@ -3,8 +3,8 @@ const project = ["./tsconfig.node.json", "./packages/*/tsconfig.json"];
 module.exports = {
   extends: [
     "eslint:recommended",
-    "plugin:@typescript-eslint/strict",
-    "plugin:@typescript-eslint/stylistic",
+    "plugin:@typescript-eslint/recommended-type-checked",
+    "plugin:@typescript-eslint/stylistic-type-checked",
     "plugin:import/recommended",
     "plugin:import/typescript",
     "plugin:react/recommended",
@@ -52,6 +52,18 @@ module.exports = {
     "eol-last": 0,
     "no-undef": 0,
     "no-unused-vars": 0,
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        args: "all",
+        argsIgnorePattern: "^_",
+        caughtErrors: "all",
+        caughtErrorsIgnorePattern: "^_",
+        destructuredArrayIgnorePattern: "^_",
+        varsIgnorePattern: "^_",
+        ignoreRestSiblings: true,
+      },
+    ],
     "max-len": 0,
     "no-console": 0,
     indent: 0,
@@ -130,7 +142,6 @@ module.exports = {
     "@typescript-eslint/no-explicit-any": 0,
     "@typescript-eslint/no-unsafe-argument": 0,
     "@typescript-eslint/indent": ["error", 2],
-    "@typescript-eslint/no-unused-vars": 0,
     "@typescript-eslint/no-unused-expressions": 2,
     "@typescript-eslint/consistent-type-imports": [2, { disallowTypeAnnotations: false }],
   },
