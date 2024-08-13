@@ -12,8 +12,6 @@ const meta: Meta<typeof ReactDraggableModal> = {
 
 export default meta;
 
-type Story = StoryObj<typeof ReactDraggableModal>;
-
 const BasicUsage = () => {
   const [isOpen, setIsOpen] = useState(false);
 

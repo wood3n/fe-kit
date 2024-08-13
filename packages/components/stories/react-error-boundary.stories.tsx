@@ -9,8 +9,6 @@ const meta: Meta<typeof ErrorBoundary> = {
 };
 export default meta;
 
-type Story = StoryObj<typeof ErrorBoundary>;
-
 const ErrorComponent = () => {
   throw new Error("this is an error component");
 };
