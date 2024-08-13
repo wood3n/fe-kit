@@ -1,8 +1,7 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "jsx": "react-jsx",
-    "noEmit": false
+    "noEmit": true
   },
   "include": ["src", "stories", ".storybook"]
 }
