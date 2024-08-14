@@ -1,13 +1,7 @@
 {
   "name": "dev-kit",
   "private": true,
-  "author": "oxyg3n",
-  "license": "MIT",
   "description": "frontend development utils and components",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/wood3n/dev-kit.git"
-  },
   "keywords": [
     "typescript",
     "frontend",
@@ -15,16 +9,26 @@
     "react components",
     "js"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wood3n/dev-kit.git"
+  },
+  "license": "MIT",
+  "author": "oxyg3n",
   "type": "module",
   "scripts": {
-    "prepare": "husky",
-    "test": "vitest",
+    "build:components": "pnpm --filter @dev-kit/components run build",
+    "build:components-site": "pnpm --filter @dev-kit/components run build-storybook",
+    "build:utils": "pnpm --filter @dev-kit/utils run build",
     "coverage": "vitest run --coverage",
     "dev:components": "pnpm --filter @dev-kit/components run dev",
     "dev:utils": "pnpm --filter @dev-kit/utils run dev",
-    "build:components": "pnpm --filter @dev-kit/components run build",
-    "build:components-site": "pnpm --filter @dev-kit/components run build-storybook",
-    "build:utils": "pnpm --filter @dev-kit/utils run build"
+    "prepare": "husky",
+    "test": "vitest"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx,json}": "prettier-eslint **/*.{js,jsx,ts,tsx,json} --write",
+    "**/*.{css,scss,sass,less}": "stylelint --fix"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
@@ -47,6 +51,7 @@
     "lint-staged": "^15.2.7",
     "prettier": "^3.3.2",
     "prettier-eslint-cli": "^8.0.1",
+    "prettier-plugin-packagejson": "^2.5.1",
     "prettier-plugin-tailwindcss": "^0.6.5",
     "semantic-release": "^24.0.0",
     "semantic-release-monorepo": "^8.0.2",
@@ -56,10 +61,6 @@
     "typescript": "^5.5.2",
     "typescript-eslint": "^7.13.1",
     "vitest": "^1.6.0"
-  },
-  "lint-staged": {
-    "**/*.{js,jsx,ts,tsx,json}": "prettier-eslint **/*.{js,jsx,ts,tsx,json} --write",
-    "**/*.{css,scss,sass,less}": "stylelint --fix"
   },
   "engines": {
     "node": ">=18"
