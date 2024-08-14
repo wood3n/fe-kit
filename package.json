@@ -27,7 +27,7 @@
     "test": "vitest"
   },
   "lint-staged": {
-    "**/*.{js,jsx,ts,tsx,json}": "prettier-eslint **/*.{js,jsx,ts,tsx,json} --write",
+    "**/*.{js,jsx,ts,tsx,json}": "prettier-eslint --write",
     "**/*.{css,scss,sass,less}": "stylelint --fix"
   },
   "devDependencies": {

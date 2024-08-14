@@ -1,8 +1,6 @@
 {
   "name": "@dev-kit/utils",
   "version": "1.0.0",
-  "author": "oxygen",
-  "license": "MIT",
   "description": "dev utils",
   "keywords": [
     "javascript",
@@ -11,6 +9,8 @@
     "typescriptreact",
     "utils"
   ],
+  "license": "MIT",
+  "author": "oxygen",
   "type": "module",
   "main": "dist/index.js",
   "files": [
