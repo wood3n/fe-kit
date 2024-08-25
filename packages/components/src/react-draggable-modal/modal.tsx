@@ -30,7 +30,7 @@ const Modal = ({ top, left, children, className, style }: Props) => {
   return (
     <div
       ref={setNodeRef}
-      className="fixed resize overflow-auto"
+      className="fixed resize overflow-auto bg-white shadow-lg"
       style={{
         top,
         left,

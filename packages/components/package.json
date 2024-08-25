@@ -10,9 +10,7 @@
   "module": "./dist/es/index.js",
   "types": "./dist/types/index.d.ts",
   "files": [
-    "dist",
-    "es",
-    "lib"
+    "dist"
   ],
   "scripts": {
     "build": "modern build",
@@ -20,33 +18,34 @@
     "dev": "storybook dev"
   },
   "dependencies": {
+    "@dev-kit/utils": "workspace:*",
     "@dnd-kit/core": "^6.1.0",
     "@dnd-kit/utilities": "^3.2.2",
-    "clsx": "^2.1.1"
+    "@iconify/react": "^5.0.2",
+    "clsx": "^2.1.1",
+    "react-pdf": "^9.1.0"
   },
   "devDependencies": {
     "@modern-js/module-tools": "^2.58.0",
     "@modern-js/plugin-tailwindcss": "^2.58.0",
     "@storybook/addon-essentials": "^8.2.8",
     "@storybook/addon-links": "^8.2.8",
-    "@storybook/addon-onboarding": "^8.2.8",
     "@storybook/blocks": "^8.2.8",
     "@storybook/manager-api": "^8.2.8",
     "@storybook/react": "^8.2.8",
     "@storybook/react-vite": "^8.2.8",
     "@storybook/test": "^8.2.8",
     "@storybook/theming": "^8.2.8",
+    "@svgr/rollup": "^8.1.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.41",
     "prop-types": "^15.8.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "storybook": "^8.2.8",
-    "tailwindcss": "^3.4.9",
-    "vite": "^5.4.0"
+    "tailwindcss": "^3.4.9"
   },
   "peerDependencies": {
     "react": ">=16.8.0",

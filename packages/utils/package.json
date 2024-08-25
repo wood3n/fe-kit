@@ -4,19 +4,23 @@
   "description": "dev utils",
   "keywords": [
     "javascript",
-    "javascriptreact",
     "typescript",
-    "typescriptreact",
-    "utils"
+    "javascript utils"
   ],
   "license": "MIT",
   "author": "oxygen",
   "type": "module",
-  "main": "dist/index.js",
+  "main": "./dist/lib/index.js",
+  "unpkg": "./dist/umd/index.js",
+  "module": "./dist/es/index.js",
+  "types": "./dist/types/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "modern build"
+  },
+  "devDependencies": {
+    "@modern-js/module-tools": "^2.58.0"
   }
 }

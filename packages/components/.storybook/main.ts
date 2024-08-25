@@ -1,4 +1,5 @@
 import type { StorybookConfig } from "@storybook/react-vite";
+import svgr from "@svgr/rollup";
 
 const config: StorybookConfig = {
   stories: ["../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
@@ -17,5 +18,10 @@ const config: StorybookConfig = {
   ],
   framework: "@storybook/react-vite",
   staticDirs: ["../public"],
+  viteFinal(config) {
+    // Add your configuration here
+    config.plugins?.push(svgr());
+    return config;
+  },
 };
 export default config;

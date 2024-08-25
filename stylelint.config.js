@@ -4,8 +4,6 @@ export default {
   plugins: ["stylelint-prettier"],
   rules: {
     "block-no-empty": true,
-    indentation: 2,
-    "string-quotes": "single",
     "color-hex-length": "short",
     "at-rule-no-unknown": [
       true,
