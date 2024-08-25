@@ -102,7 +102,7 @@ importers:
   packages/components:
     dependencies:
       '@dev-kit/utils':
-        specifier: workspace:^
+        specifier: workspace:*
         version: link:../utils
       '@dnd-kit/core':
         specifier: ^6.1.0
