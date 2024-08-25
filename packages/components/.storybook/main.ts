@@ -4,7 +4,6 @@ import svgr from "@svgr/rollup";
 const config: StorybookConfig = {
   stories: ["../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
   addons: [
-    "@storybook/addon-onboarding",
     "@storybook/addon-links",
     {
       name: "@storybook/addon-essentials",
