@@ -1,0 +1,41 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "defaultBase": "master",
+  "targetDefaults": {
+    "build": {
+      "inputs": ["{projectRoot}/src/**/*"],
+      "dependsOn": ["^build"],
+      "outputs": ["{projectRoot}/dist"],
+      "cache": true
+    },
+    "build-storybook": {
+      "inputs": ["{projectRoot}/**/*", "!{projectRoot}/**/*.md"],
+      "dependsOn": ["^build-storybook"],
+      "outputs": ["{projectRoot}/storybook-static"],
+      "cache": true
+    },
+    "dev": {
+      "dependsOn": ["^build"],
+      "cache": true
+    }
+  },
+  "release": {
+    "projects": ["packages/*"],
+    "projectsRelationship": "independent",
+    "changelog": {
+      "projectChangelogs": {
+        "renderOptions": {
+          // Whether or not the commit authors should be added to the bottom of the changelog in a "Thank You" section.
+          "authors": false,
+          // Whether or not the commit references (such as commit and/or PR links) should be included in the changelog.
+          "commitReferences": true,
+          // Whether or not to include the date in the version title. It can be set to false to disable it, or true to enable with the default of (YYYY-MM-DD).
+          "versionTitleDate": true
+        },
+        // This will create one GitHub release per project containing
+        // the project changelog contents
+        "createRelease": "github"
+      }
+    }
+  }
+}
