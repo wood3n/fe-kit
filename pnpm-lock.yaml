@@ -114,7 +114,7 @@ importers:
         specifier: ^3.2.2
         version: 3.2.2(react@18.3.1)
       '@fe-kit/utils':
-        specifier: workspace:*
+        specifier: 1.0.2
         version: link:../utils
       '@iconify/react':
         specifier: ^5.0.2
