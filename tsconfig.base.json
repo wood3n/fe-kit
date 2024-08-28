@@ -2,9 +2,9 @@
   "compilerOptions": {
     "target": "ES6",
     "lib": ["ESNext", "DOM"],
-    "module": "preserve",
+    "module": "ESNext",
     "jsx": "react-jsx",
-    "moduleResolution": "Bundler",
+    "moduleResolution": "node",
     "resolveJsonModule": true,
     "allowJs": true,
     "allowSyntheticDefaultImports": true,

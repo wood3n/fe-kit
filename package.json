@@ -24,6 +24,7 @@
     "dev:components": "nx run @fe-kit/components:dev",
     "dev:utils": "nx run @fe-kit/utils:dev",
     "prepare": "husky",
+    "release": "nx release --skip-publish",
     "test": "vitest"
   },
   "lint-staged": {
