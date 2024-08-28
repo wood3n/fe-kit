@@ -1,6 +1,6 @@
 import type { Meta } from "@storybook/react";
 
-import Progress from "../src/react-progress";
+import { Progress } from "../src/react-progress";
 
 const meta: Meta<typeof Progress> = {
   title: "react-progress",

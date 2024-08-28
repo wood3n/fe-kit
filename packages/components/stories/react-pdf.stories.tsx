@@ -1,6 +1,6 @@
 import type { Meta } from "@storybook/react";
 
-import PdfViewer from "../src/react-pdf-viewer";
+import { PdfViewer } from "../src/react-pdf-viewer";
 
 const meta: Meta<typeof PdfViewer> = {
   title: "react-pdf-viewer",
