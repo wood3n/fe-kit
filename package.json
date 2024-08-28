@@ -1,5 +1,5 @@
 {
-  "name": "dev-kit",
+  "name": "fe-kit",
   "private": true,
   "description": "frontend development utils and components",
   "keywords": [
@@ -11,18 +11,18 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/wood3n/dev-kit.git"
+    "url": "https://github.com/wood3n/fe-kit.git"
   },
   "license": "MIT",
   "author": "oxyg3n",
   "type": "module",
   "scripts": {
-    "build:components": "nx run @dev-kit/components:build",
-    "build:components-site": "nx run @dev-kit/components:build-storybook",
-    "build:utils": "nx run @dev-kit/utils:build",
+    "build:components": "nx run @fe-kit/components:build",
+    "build:components-site": "nx run @fe-kit/components:build-storybook",
+    "build:utils": "nx run @fe-kit/utils:build",
     "coverage": "vitest run --coverage",
-    "dev:components": "nx run @dev-kit/components:dev",
-    "dev:utils": "nx run @dev-kit/utils:dev",
+    "dev:components": "nx run @fe-kit/components:dev",
+    "dev:utils": "nx run @fe-kit/utils:dev",
     "prepare": "husky",
     "test": "vitest"
   },

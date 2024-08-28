@@ -107,15 +107,15 @@ importers:
 
   packages/components:
     dependencies:
-      '@dev-kit/utils':
-        specifier: workspace:*
-        version: link:../utils
       '@dnd-kit/core':
         specifier: ^6.1.0
         version: 6.1.0(react-dom@18.3.1)(react@18.3.1)
       '@dnd-kit/utilities':
         specifier: ^3.2.2
         version: 3.2.2(react@18.3.1)
+      '@fe-kit/utils':
+        specifier: workspace:*
+        version: link:../utils
       '@iconify/react':
         specifier: ^5.0.2
         version: 5.0.2(react@18.3.1)

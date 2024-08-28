@@ -2,7 +2,7 @@ import { create } from "@storybook/theming/create";
 
 export default create({
   base: "light",
-  brandTitle: "dev-kit",
+  brandTitle: "fe-kit",
   brandImage: "logo.png",
   brandTarget: "_self",
 });

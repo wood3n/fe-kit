@@ -3,11 +3,11 @@ import { useState } from "react";
 import { Document, type DocumentProps, Page, pdfjs } from "react-pdf";
 
 import clsx from "clsx";
-import { download } from "@dev-kit/utils";
+import { download } from "@fe-kit/utils";
 import { Icon } from "@iconify/react";
 
-import Progress from "../react-progress";
-import Spin from "../react-spin";
+import { Progress } from "../react-progress";
+import { Spin } from "../react-spin";
 import IconButton from "./icon-button";
 import Pagination from "./pagination";
 import type { LoadStatus, PageState } from "./types";
@@ -33,7 +33,7 @@ const pdfjsOptions: DocumentProps["options"] = {
   isEvalSupported: false,
 };
 
-const PdfViewer = ({ url, className, style }: PdfViewerProps) => {
+export const PdfViewer = ({ url, className, style }: PdfViewerProps) => {
   const [pageData, setPageData] = useState<PageState[]>([]);
   const [pageIndex, setPageIndex] = useState(0);
   const [status, setStatus] = useState<LoadStatus>("loading");
@@ -144,5 +144,3 @@ const PdfViewer = ({ url, className, style }: PdfViewerProps) => {
     </div>
   );
 };
-
-export default PdfViewer;

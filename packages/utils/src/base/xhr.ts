@@ -7,7 +7,7 @@ export interface XhrOptions {
 }
 
 export const xhr = (url: string, options?: XhrOptions) => {
-  const { method = "GET", onSuccess, onError, onProgress, responseType = "" } = options || {};
+  const { method = "GET", onSuccess, onError, onProgress, responseType = "" } = options ?? {};
 
   const xhrInstance = new XMLHttpRequest();
   xhrInstance.responseType = responseType;

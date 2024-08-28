@@ -7,7 +7,7 @@ export interface ProgressProps {
   style?: React.CSSProperties;
 }
 
-const Progress = ({ percent = 0, shape = "line", className, style }: ProgressProps) => {
+export const Progress = ({ percent = 0, shape = "line", className, style }: ProgressProps) => {
   const innerPercent = `${percent}%`;
   const offsetPercent = Math.round(100 - percent);
 
@@ -48,5 +48,3 @@ const Progress = ({ percent = 0, shape = "line", className, style }: ProgressPro
     </div>
   );
 };
-
-export default Progress;
