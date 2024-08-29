@@ -1,3 +1,12 @@
+## 1.0.3 (2024-08-29)
+
+
+### 🩹 Fixes
+
+- fix deps error ([ec54232](https://github.com/wood3n/fe-kit/commit/ec54232))
+
+- **components:** fix components export error ([e9f5384](https://github.com/wood3n/fe-kit/commit/e9f5384))
+
 ## 1.0.2 (2024-08-28)
 
 
