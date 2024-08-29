@@ -236,3 +236,6 @@ declare module "*?inline" {
   const src: string;
   export default src;
 }
+
+declare module "*.md";
+declare module "*.mdx";

@@ -2,7 +2,7 @@ import type { StorybookConfig } from "@storybook/react-vite";
 import svgr from "@svgr/rollup";
 
 const config: StorybookConfig = {
-  stories: ["../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+  stories: ["../stories/**/*.mdx", "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
   addons: [
     "@storybook/addon-links",
     {

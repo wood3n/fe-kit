@@ -2,18 +2,11 @@ import type { Meta } from "@storybook/react";
 
 import { ErrorBoundary } from "../src/react-error-boundary";
 
-const meta: Meta<typeof ErrorBoundary> = {
-  title: "react-error-boundary",
-  component: ErrorBoundary,
-  tags: ["autodocs"],
-};
-export default meta;
-
 const ErrorComponent = () => {
   throw new Error("this is an error component");
 };
 
-const BasicUsage = () => {
+export const Example = () => {
   return (
     <ErrorBoundary fallback="fallback：出错了！">
       <ErrorComponent />
@@ -21,6 +14,10 @@ const BasicUsage = () => {
   );
 };
 
-export const Basic = {
-  render: () => <BasicUsage />,
+const meta: Meta<typeof ErrorBoundary> = {
+  title: "ErrorBoundary",
+  component: ErrorBoundary,
+  tags: ["autodocs"],
 };
+
+export default meta;

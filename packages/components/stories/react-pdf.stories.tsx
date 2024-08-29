@@ -1,18 +1,22 @@
-import type { Meta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 
 import { PdfViewer } from "../src/react-pdf-viewer";
 
 const meta: Meta<typeof PdfViewer> = {
-  title: "react-pdf-viewer",
+  title: "PdfViewer",
   component: PdfViewer,
-  tags: ["autodocs"],
+  argTypes: {
+    url: {
+      control: { type: "text" },
+    },
+  },
 };
 export default meta;
 
-const BasicUsage = () => {
-  return <PdfViewer url="https://pdfobject.com/pdf/sample.pdf" />;
-};
+type Story = StoryObj<typeof PdfViewer>;
 
-export const Basic = {
-  render: () => <BasicUsage />,
+export const Example: Story = {
+  args: {
+    url: "https://pdfobject.com/pdf/sample.pdf",
+  },
 };

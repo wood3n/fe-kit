@@ -1,18 +1,27 @@
 import { useState } from "react";
 
-import type { Meta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 
 import { ReactDraggableModal } from "../src/react-draggable-modal";
 
 const meta: Meta<typeof ReactDraggableModal> = {
-  title: "react-draggable-modal",
+  title: "ReactDraggableModal",
   component: ReactDraggableModal,
   tags: ["autodocs"],
+  argTypes: {
+    className: {
+      control: { type: "text" },
+    },
+    style: {
+      control: { type: "object" },
+    },
+  },
 };
 
 export default meta;
+type Story = StoryObj<typeof ReactDraggableModal>;
 
-const BasicUsage = () => {
+const Basic = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -30,6 +39,6 @@ const BasicUsage = () => {
   );
 };
 
-export const Basic = {
-  render: () => <BasicUsage />,
+export const Example: Story = {
+  render: () => <Basic />,
 };
