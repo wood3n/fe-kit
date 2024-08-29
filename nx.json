@@ -31,10 +31,7 @@
           "commitReferences": true,
           // Whether or not to include the date in the version title. It can be set to false to disable it, or true to enable with the default of (YYYY-MM-DD).
           "versionTitleDate": true
-        },
-        // This will create one GitHub release per project containing
-        // the project changelog contents
-        "createRelease": "github"
+        }
       }
     }
   }
