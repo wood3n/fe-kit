@@ -17,6 +17,7 @@
   "author": "oxyg3n",
   "type": "module",
   "scripts": {
+    "build": "nx run-many -t build",
     "build:components": "nx run @fe-kit/components:build",
     "build:components-site": "nx run @fe-kit/components:build-storybook",
     "build:utils": "nx run @fe-kit/utils:build",
