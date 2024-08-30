@@ -3,12 +3,23 @@ import type { Meta } from "@storybook/react";
 import { ErrorBoundary } from "../src/react-error-boundary";
 
 const ErrorComponent = () => {
-  throw new Error("this is an error component");
+  throw new Error("throw error component");
 };
 
 export const Example = () => {
   return (
-    <ErrorBoundary fallback="fallback：出错了！">
+    <ErrorBoundary
+      fallback={error => {
+        let errorMsg = "component error";
+        if (error instanceof Error) {
+          errorMsg = error.message;
+        } else if (typeof error === "string") {
+          errorMsg = error;
+        }
+
+        return <div className="text-red-500">{errorMsg}</div>;
+      }}
+    >
       <ErrorComponent />
     </ErrorBoundary>
   );

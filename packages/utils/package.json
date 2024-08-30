@@ -1,7 +1,7 @@
 {
   "name": "@fe-kit/utils",
   "version": "1.0.2",
-  "description": "front-end dev utilities functions",
+  "description": "front-end dev utilities",
   "keywords": [
     "javascript",
     "typescript",

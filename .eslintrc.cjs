@@ -10,6 +10,7 @@ module.exports = {
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
     "plugin:jsx-a11y/recommended",
+    "plugin:prettier/recommended",
   ],
   parser: "@typescript-eslint/parser",
   plugins: ["@typescript-eslint", "simple-import-sort", "jsx-a11y"],
@@ -37,9 +38,7 @@ module.exports = {
       },
     },
     react: {
-      pragma: "React", // Pragma to use, default to "React"
-      fragment: "Fragment", // Fragment to use (may be a property of <pragma>), default to "Fragment"
-      version: "16.8.0",
+      version: "18",
     },
   },
   overrides: [

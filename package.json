@@ -3,11 +3,11 @@
   "private": true,
   "description": "frontend development utils and components",
   "keywords": [
+    "javascript",
     "typescript",
     "frontend",
     "react",
-    "react components",
-    "js"
+    "react components"
   ],
   "repository": {
     "type": "git",
@@ -29,13 +29,16 @@
     "test": "vitest"
   },
   "lint-staged": {
-    "**/*.{js,jsx,ts,tsx,json}": "prettier-eslint --write",
-    "**/*.{css,scss,sass,less}": "stylelint --fix"
+    "**/*.{js,jsx,ts,tsx}": "prettier-eslint --write",
+    "**/*.{json,md,mdx}": "prettier --write",
+    "**/*.{css,scss,sass,less}": [
+      "prettier --write",
+      "stylelint --fix"
+    ]
   },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
-    "@commitlint/config-nx-scopes": "^19.3.1",
     "@nx/js": "19.6.2",
     "@swc-node/register": "~1.9.1",
     "@swc/core": "~1.5.7",
@@ -50,6 +53,7 @@
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-jsx-a11y": "^6.9.0",
+    "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react": "^7.35.0",
     "eslint-plugin-simple-import-sort": "^12.1.0",
     "glob": "^11.0.0",

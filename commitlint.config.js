@@ -1,3 +1,3 @@
 export default {
-  extends: ["@commitlint/config-conventional", "@commitlint/config-nx-scopes"],
+  extends: ["@commitlint/config-conventional"],
 };

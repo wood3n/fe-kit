@@ -10,7 +10,7 @@
     },
     "build-storybook": {
       "inputs": ["{projectRoot}/**/*", "!{projectRoot}/**/*.md"],
-      "dependsOn": ["^build-storybook"],
+      "dependsOn": ["^build"],
       "outputs": ["{projectRoot}/storybook-static"],
       "cache": true
     },
