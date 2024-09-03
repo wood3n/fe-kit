@@ -1,18 +1,13 @@
-name: Publish
+name: PrePublish
 
 on:
-  workflow_dispatch:
-  push:
-    branches: master
+  pull_request:
+    types: [opened, synchronize]
 
 jobs:
-  publish:
-    name: Publish
+  prePublish:
+    name: PrePublish
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pull-requests: write # needed for provenance data generation
-    timeout-minutes: 10
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -41,8 +36,8 @@ jobs:
       - name: Build all packages
         run: npx nx run-many -t build
 
-      - name: Generate changelog and bump version
-        run: npx nx release --skip-publish
+      - name: Bump prerelease version
+        run: npx nx release version --specifier prerelease --preid alpha
 
       - name: Publish packages
         run: pnpm publish -r --access public --no-git-checks

@@ -14,6 +14,7 @@ const config: StorybookConfig = {
         outline: false, // 禁用 outline 插件
       },
     },
+    "@kemuridama/storybook-addon-github",
   ],
   framework: "@storybook/react-vite",
   staticDirs: ["../public"],

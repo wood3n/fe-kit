@@ -1,5 +1,16 @@
-## 1.0.3 (2024-08-29)
+## 1.0.5 (2024-09-02)
 
+### 🩹 Fixes
+
+- **@fe-kit/components:** fix npm version error
+
+## 1.0.4 (2024-09-02)
+
+### 🩹 Fixes
+
+- **@fe-kit/components:** fix npm version
+
+## 1.0.3 (2024-08-29)
 
 ### 🩹 Fixes
 
@@ -9,7 +20,6 @@
 
 ## 1.0.2 (2024-08-28)
 
-
 ### 🚀 Features
 
 - init project ([1ca72e3](https://github.com/wood3n/fe-kit/commit/1ca72e3))
@@ -17,7 +27,6 @@
 - add download base ([84217de](https://github.com/wood3n/fe-kit/commit/84217de))
 
 - add react error boundary ([3df8b0e](https://github.com/wood3n/fe-kit/commit/3df8b0e))
-
 
 ### 🩹 Fixes
 
@@ -32,7 +41,6 @@
 - change components exports, update readme ([8117a89](https://github.com/wood3n/fe-kit/commit/8117a89))
 
 - fix stories error ([4272965](https://github.com/wood3n/fe-kit/commit/4272965))
-
 
 ### 🧱 Updated Dependencies
 

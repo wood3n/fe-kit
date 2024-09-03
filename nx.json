@@ -2,6 +2,10 @@
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "defaultBase": "master",
   "targetDefaults": {
+    "dev": {
+      "dependsOn": ["^build"],
+      "cache": true
+    },
     "build": {
       "inputs": ["{projectRoot}/src/**/*"],
       "dependsOn": ["^build"],
@@ -9,29 +13,40 @@
       "cache": true
     },
     "build-storybook": {
-      "inputs": ["{projectRoot}/**/*", "!{projectRoot}/**/*.md"],
+      "inputs": ["^production", "{projectRoot}/.storybook/**/*", "{projectRoot}/stories/**/*", "{projectRoot}/src/**/*"],
       "dependsOn": ["^build"],
       "outputs": ["{projectRoot}/storybook-static"],
-      "cache": true
-    },
-    "dev": {
-      "dependsOn": ["^build"],
       "cache": true
     }
   },
   "release": {
+    "versionPlans": true,
     "projects": ["packages/*"],
     "projectsRelationship": "independent",
+    "version": {
+      "generatorOptions": {
+        "currentVersionResolver": "registry",
+        "skipLockFileUpdate": true
+      },
+      "git": {
+        "commit": false,
+        "stageChanges": false,
+        "tag": false
+      }
+    },
     "changelog": {
       "projectChangelogs": {
         "renderOptions": {
-          // Whether or not the commit authors should be added to the bottom of the changelog in a "Thank You" section.
-          "authors": false,
-          // Whether or not the commit references (such as commit and/or PR links) should be included in the changelog.
+          "authors": true,
+          "mapAuthorsToGitHubUsernames": true,
           "commitReferences": true,
-          // Whether or not to include the date in the version title. It can be set to false to disable it, or true to enable with the default of (YYYY-MM-DD).
           "versionTitleDate": true
         }
+      },
+      "git": {
+        "commit": false,
+        "stageChanges": false,
+        "tag": false
       }
     }
   }

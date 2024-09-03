@@ -41,3 +41,35 @@ pnpm add @fe-kit/utils
 ```ts
 import { download } from "@fe-kit/utils";
 ```
+
+## development
+
+### install pnpm and nx
+
+```shell
+npm install -g pnpm nx
+```
+
+### install dependencies
+
+```shell
+pnpm i
+```
+
+### start
+
+```shell
+pnpm run dev:components
+
+// or
+
+pnpm run dev:utils
+```
+
+### commit and add changelog
+
+use `nx release plan` to add your changelog and commit.
+
+```shell
+nx release plan
+```
