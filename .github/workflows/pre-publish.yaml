@@ -32,6 +32,7 @@ jobs:
       - name: Check release plan
         #  If a version plan file does not exist, the command will print an error message and return a non-zero exit code
         run: npx nx release plan:check
+        if: ${{ success() }}
 
       - name: Build all packages
         run: npx nx run-many -t build

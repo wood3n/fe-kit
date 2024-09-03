@@ -13,7 +13,7 @@
       "cache": true
     },
     "build-storybook": {
-      "inputs": ["^production", "{projectRoot}/.storybook/**/*", "{projectRoot}/stories/**/*", "{projectRoot}/src/**/*"],
+      "inputs": ["{projectRoot}/.storybook/**/*", "{projectRoot}/stories/**/*", "{projectRoot}/src/**/*"],
       "dependsOn": ["^build"],
       "outputs": ["{projectRoot}/storybook-static"],
       "cache": true
