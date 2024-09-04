@@ -21,22 +21,27 @@ jobs:
     # Job steps
     steps:
       # Manual Checkout
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       # Set up Node
-      - uses: actions/setup-node@v4
+      - name: Setup node
+        uses: actions/setup-node@v4
         with:
           node-version: 18
 
       # Set up pnpm
-      - uses: pnpm/action-setup@v4
-        name: Install pnpm
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
         with:
           version: 8
           run_install: false
 
       #👇 Add Storybook build and deploy to GitHub Pages as a step in the workflow
-      - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
+      - name: Deploy github pages
+        uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
         with:
           install_command: pnpm install # default: npm ci
           build_command: pnpm run build:components-site # default: npm run build-storybook
