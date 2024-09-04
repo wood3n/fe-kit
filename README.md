@@ -10,38 +10,6 @@ front-end react components and dev utils.
   <img alt="Static Badge" src="https://img.shields.io/badge/license-MIT-green?style=for-the-badge">
 </div>
 
-## @fe-kit/components
-
-<img alt="NPM Version" src="https://img.shields.io/npm/v/%40fe-kit%2Fcomponents?style=for-the-badge&logo=npm">
-
-### install
-
-```shell
-pnpm add @fe-kit/components
-```
-
-### usage
-
-```ts
-import { PdfViewer } from "@fe-kit/components";
-```
-
-## @fe-kit/utils
-
-<img alt="NPM Version" src="https://img.shields.io/npm/v/%40fe-kit%2Futils?style=for-the-badge&logo=npm">
-
-### install
-
-```shell
-pnpm add @fe-kit/utils
-```
-
-### usage
-
-```ts
-import { download } from "@fe-kit/utils";
-```
-
 ## development
 
 ### install pnpm and nx
@@ -72,4 +40,6 @@ use `nx release plan` to add your changelog and commit.
 
 ```shell
 nx release plan
+
+git add . && git commit -m [message]
 ```
