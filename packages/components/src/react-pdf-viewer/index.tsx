@@ -18,7 +18,7 @@ import "./index.css";
 
 export interface PdfViewerProps {
   /**
-   * 文件url
+   * file url
    */
   url: string;
   className?: string;

@@ -29,16 +29,5 @@ jobs:
           version: 8
           run_install: true
 
-      - name: Check release plan
-        #  If a version plan file does not exist, the command will print an error message and return a non-zero exit code
-        run: npx nx release plan:check
-        if: ${{ success() }}
-
-      - name: Build all packages
-        run: npx nx run-many -t build
-
-      - name: Bump prerelease version
-        run: npx nx release version --specifier prerelease --preid alpha
-
-      - name: Publish packages
-        run: pnpm publish -r --access public --no-git-checks
+      - name: Publish affected project alpha version
+        run: npx nx affected -t nx release --base=origin/master

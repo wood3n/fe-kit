@@ -17,6 +17,10 @@
       "dependsOn": ["^build"],
       "outputs": ["{projectRoot}/storybook-static"],
       "cache": true
+    },
+    "nx-release": {
+      "dependsOn": ["^build"],
+      "cache": false
     }
   },
   "release": {

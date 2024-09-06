@@ -77,6 +77,7 @@ module.exports = {
       },
     ],
     "object-curly-spacing": ["error", "always"],
+    "jsx-a11y/alt-text": 0,
     "import/no-cycle": 0,
     "import/prefer-default-export": 0,
     "import/no-extraneous-dependencies": 0,

@@ -10,6 +10,7 @@ export default defineConfig({
         exportType: "named",
       },
     },
+    jsx: "transform",
     tsconfig: "./tsconfig.build.json",
   },
 });

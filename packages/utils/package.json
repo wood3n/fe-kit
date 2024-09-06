@@ -29,6 +29,10 @@
   "scripts": {
     "build": "modern build"
   },
+  "dependencies": {
+    "jsbarcode": "^3.11.6",
+    "qr-code-styling": "1.6.0-rc.1"
+  },
   "devDependencies": {
     "@modern-js/module-tools": "^2.58.0"
   },
