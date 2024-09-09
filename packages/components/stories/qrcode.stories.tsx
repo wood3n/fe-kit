@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { QrCode } from "../src/react-qrcode";
+import { QrCode, QrCodeScan } from "../src/react-qrcode";
 
 const meta: Meta<typeof QrCode> = {
   title: "QrCode",
@@ -20,5 +20,11 @@ type Story = StoryObj<typeof QrCode>;
 export const QrCodeImage: Story = {
   args: {
     data: "123456",
+  },
+};
+
+export const QrCodeScanExample: Story = {
+  render: () => {
+    return <QrCodeScan />;
   },
 };

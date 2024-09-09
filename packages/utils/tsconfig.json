@@ -1,7 +1,11 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "noEmit": true
+    "composite": true,
+    "rootDir": "./src",
+    "baseUrl": ".",
+    "outDir": "dist",
+    "declarationDir": "dist/types"
   },
-  "exclude": ["node_modules", "dist"]
+  "include": ["src"]
 }

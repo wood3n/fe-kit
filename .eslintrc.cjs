@@ -1,4 +1,4 @@
-const project = ["./tsconfig.node.json", "./packages/*/tsconfig.json"];
+const project = ["./tsconfig.node.json", "./packages/*/tsconfig.json", "./packages/*/tsconfig.node.json"];
 
 module.exports = {
   extends: [
@@ -144,5 +144,6 @@ module.exports = {
     "@typescript-eslint/indent": ["error", 2],
     "@typescript-eslint/no-unused-expressions": 2,
     "@typescript-eslint/consistent-type-imports": [2, { disallowTypeAnnotations: false }],
+    "@typescript-eslint/prefer-nullish-coalescing": 0,
   },
 };

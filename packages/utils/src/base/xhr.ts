@@ -6,7 +6,7 @@ export interface XhrOptions {
   responseType?: XMLHttpRequestResponseType;
 }
 
-export const xhr = (url: string, options?: XhrOptions) => {
+export const createXhr = (url: string, options?: XhrOptions) => {
   const { method = "GET", onSuccess, onError, onProgress, responseType = "" } = options ?? {};
 
   const xhrInstance = new XMLHttpRequest();
@@ -15,7 +15,7 @@ export const xhr = (url: string, options?: XhrOptions) => {
 
   xhrInstance.onload = () => {
     const status = xhrInstance.status;
-    if (status === 0 || (status >= 200 && status <= 400)) {
+    if (status >= 200 && status < 300) {
       onSuccess?.(xhrInstance.response);
     } else {
       onError?.(xhrInstance.statusText);

@@ -1,0 +1,42 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "@fe-kit/components",
+  "projectType": "library",
+  "sourceRoot": "packages/components/src",
+  "namedInputs": {
+    "default": ["{projectRoot}/**/*", "!{projectRoot}/*.md"],
+    "production": ["default", "!{projectRoot}/.storybook/**/*", "!{projectRoot}/**/*.stories.@(js|jsx|ts|tsx|mdx)"],
+    "stories": ["{projectRoot}/.storybook", "{projectRoot}/stories/**", "{projectRoot}/src/**/*"] // except test files
+  },
+  "targets": {
+    "dev": {
+      "inputs": ["default", "{workspaceRoot}/packages/utils/**/*"],
+      "dependsOn": [
+        {
+          "projects": ["@fe-kit/utils"],
+          "target": "build"
+        }
+      ]
+    },
+    "build": {
+      "inputs": ["production"],
+      "outputs": ["{projectRoot}/dist"],
+      "dependsOn": [
+        {
+          "projects": ["@fe-kit/utils"],
+          "target": "build"
+        }
+      ]
+    },
+    "build-storybook": {
+      "inputs": ["stories"],
+      "outputs": ["{projectRoot}/storybook-static"],
+      "dependsOn": [
+        {
+          "projects": ["@fe-kit/utils"],
+          "target": "build"
+        }
+      ]
+    }
+  }
+}
