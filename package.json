@@ -17,14 +17,15 @@
   "author": "oxyg3n",
   "type": "module",
   "scripts": {
-    "build": "npx nx run-many -t build",
-    "build:components": "npx nx run @fe-kit/components:build",
-    "build:components-site": "npx nx run @fe-kit/components:build-storybook",
-    "build:utils": "npx nx run @fe-kit/utils:build",
+    "ac": "npx changeset add",
+    "build": "npx turbo run build",
+    "build:components": "npx turbo run build --filter @fe-kit/components",
+    "build:components-site": "npx turbo run build-storybook",
+    "build:utils": "npx turbo run build --filter @fe-kit/utils",
     "coverage": "vitest run --coverage",
-    "dev:components": "npx nx run @fe-kit/components:dev",
-    "dev:utils": "npx nx run @fe-kit/utils:dev",
+    "dev:components": "turbo watch @fe-kit/components#dev",
     "prepare": "is-ci || husky",
+    "publish-packages": "npx turbo run build && npx changeset version && npx changeset publish",
     "test": "vitest"
   },
   "lint-staged": {
@@ -36,12 +37,10 @@
     ]
   },
   "devDependencies": {
+    "@changesets/changelog-github": "^0.5.0",
+    "@changesets/cli": "^2.27.8",
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
-    "@nx/js": "19.6.2",
-    "@swc-node/register": "~1.9.1",
-    "@swc/core": "~1.5.7",
-    "@swc/helpers": "~0.5.11",
     "@types/node": "^20.14.11",
     "@typescript-eslint/eslint-plugin": "^7.13.1",
     "@typescript-eslint/parser": "^7.13.1",
@@ -59,7 +58,6 @@
     "husky": "^9.0.11",
     "is-ci": "^3.0.1",
     "lint-staged": "^15.2.7",
-    "nx": "19.6.2",
     "prettier": "^3.3.2",
     "prettier-eslint-cli": "^8.0.1",
     "prettier-plugin-packagejson": "^2.5.1",
@@ -67,10 +65,12 @@
     "stylelint": "^16.8.1",
     "stylelint-config-standard": "^36.0.1",
     "stylelint-prettier": "^5.0.2",
+    "turbo": "^2.1.1",
     "typescript": "^5.5.2",
     "typescript-eslint": "^7.13.1",
     "vitest": "^1.6.0"
   },
+  "packageManager": "pnpm@8.15.7",
   "engines": {
     "node": ">=18"
   }

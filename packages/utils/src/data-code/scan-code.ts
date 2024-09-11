@@ -3,7 +3,7 @@ import { BrowserMultiFormatReader } from "@zxing/library";
 /**
  * scan barcode or qrcode from selected file
  * @param file file object
- * @returns scan text result
+ * @returns scan text
  */
 export const scanCode = async (file: File) => {
   return new Promise<string>((resolve, reject) => {

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "cacheDir": ".turbo/cache",
+  "tasks": {
+    "@fe-kit/components#dev": {
+      "persistent": true,
+      "cache": false,
+      "dependsOn": ["@fe-kit/utils#build"]
+    },
+    "@fe-kit/components#build-storybook": {
+      "dependsOn": ["@fe-kit/utils#build"],
+      "inputs": ["src", ".storybook", "stories"],
+      "outputs": ["storybook-static/**"]
+    },
+    "build": {
+      "inputs": ["$TURBO_DEFAULT$", "!README.md"],
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"]
+    }
+  }
+}

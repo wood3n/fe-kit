@@ -37,8 +37,8 @@ const downloadAsBlob = (url: string) => {
 };
 
 /**
- * 批量下载
- * @param urls 多个文件 url
+ * batch download files from http url
+ * @param urls multiple file download url
  */
 export const batchDownload = async (
   urls: string[],

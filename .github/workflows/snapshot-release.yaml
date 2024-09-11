@@ -29,10 +29,12 @@ jobs:
           version: 8
           run_install: true
 
-      - name: Set nx affected variables
-        uses: nrwl/nx-set-shas@v4
-        with:
-          main-branch-name: "master"
+      - name: Check changesets
+        id: changesets
+        uses: changesets/action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Publish affected project alpha version
-        run: npx nx affected -t nx-release-publish
+      - name: Snapshot version
+        if: steps.changesets.outputs.hasChangesets == 'true'
+        run: npx changeset version --snapshot beta && npx changeset publish --tag beta
