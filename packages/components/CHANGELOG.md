@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.7
+
+### Patch Changes
+
+- e1a4171: fix release ci check
+- Updated dependencies [e1a4171]
+  - @fe-kit/utils@1.0.4
+
 ## 1.0.6
 
 ### Patch Changes
