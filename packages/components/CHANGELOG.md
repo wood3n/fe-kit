@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.0.7
+
+### Patch Changes
+
+- fa73576: fix release ci
+- dc9911e: fix release ci
+- Updated dependencies [fa73576]
+- Updated dependencies [dc9911e]
+  - @fe-kit/utils@1.0.4
+
 ## 1.0.6
 
 ### Patch Changes
