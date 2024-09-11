@@ -1,4 +1,4 @@
-name: PrePublish
+name: Snapshot release on PR
 
 on:
   pull_request:
@@ -19,9 +19,6 @@ jobs:
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org/
-
-      - name: Setup npmrc
-        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_ACCESS_TOKEN }}" > .npmrc
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4
