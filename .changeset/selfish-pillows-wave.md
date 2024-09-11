@@ -3,4 +3,4 @@
 "@fe-kit/utils": patch
 ---
 
-fix release ci
+fix release ci check

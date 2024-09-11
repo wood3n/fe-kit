@@ -8,6 +8,7 @@ on:
 
 jobs:
   Deploy-Preview:
+    if: ${{ ! startsWith(github.event.pull_request.title, 'auto-changesets-release') }}
     runs-on: ubuntu-latest
     steps:
       # Manual Checkout
