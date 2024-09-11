@@ -1,5 +1,17 @@
 ## 1.0.5 (2024-09-02)
 
+## 1.0.6
+
+### Patch Changes
+
+- 91db1d2: add new components and utils, change monorepo tool to turborepo and changesets
+- 43754c2: fix ci
+- 3ae70c2: chore: fix ci
+- Updated dependencies [91db1d2]
+- Updated dependencies [43754c2]
+- Updated dependencies [3ae70c2]
+  - @fe-kit/utils@1.0.3
+
 ### 🩹 Fixes
 
 - **@fe-kit/components:** fix npm version error
