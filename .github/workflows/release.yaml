@@ -12,6 +12,7 @@ jobs:
     name: Release
     runs-on: ubuntu-latest
     permissions:
+      id-token: write
       contents: read
       pull-requests: write # needed for provenance data generation
     timeout-minutes: 10
