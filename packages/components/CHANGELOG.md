@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.10
+
+### Patch Changes
+
+- 3aec4e9: fix release ci
+- Updated dependencies [3aec4e9]
+  - @fe-kit/utils@1.0.7
+
 ## 1.0.9
 
 ### Patch Changes
