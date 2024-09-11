@@ -22,6 +22,7 @@
     "build:components": "npx turbo run build --filter @fe-kit/components",
     "build:components-site": "npx turbo run build-storybook",
     "build:utils": "npx turbo run build --filter @fe-kit/utils",
+    "ci:publish": "npx turbo run build && npx changeset publish",
     "coverage": "vitest run --coverage",
     "dev:components": "npx turbo watch @fe-kit/components#dev",
     "prepare": "is-ci || husky",
