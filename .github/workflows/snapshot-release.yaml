@@ -26,13 +26,5 @@ jobs:
           version: 8.15.7
           run_install: true
 
-      - name: Check changesets
-        id: changesets
-        uses: changesets/action@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
-
-      - name: Snapshot version
-        if: steps.changesets.outputs.hasChangesets == 'true'
+      - name: Snapshot release
         run: npx changeset version --snapshot beta && npx changeset publish --tag beta
