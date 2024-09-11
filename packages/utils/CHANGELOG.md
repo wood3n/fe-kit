@@ -1,4 +1,4 @@
-## 1.0.2 (2024-08-28)
+# Changelog
 
 ## 1.0.3
 
@@ -7,6 +7,8 @@
 - 91db1d2: add new components and utils, change monorepo tool to turborepo and changesets
 - 43754c2: fix ci
 - 3ae70c2: chore: fix ci
+
+## 1.0.2 (2024-08-28)
 
 ### 🚀 Features
 

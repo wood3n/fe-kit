@@ -1,4 +1,4 @@
-## 1.0.5 (2024-09-02)
+# Changelog
 
 ## 1.0.6
 
@@ -11,6 +11,8 @@
 - Updated dependencies [43754c2]
 - Updated dependencies [3ae70c2]
   - @fe-kit/utils@1.0.3
+
+## 1.0.5 (2024-09-02)
 
 ### 🩹 Fixes
 

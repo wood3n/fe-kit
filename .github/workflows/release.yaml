@@ -38,7 +38,7 @@ jobs:
         id: changesets
         uses: changesets/action@v1
         with:
-          publish: npx turbo run build && npx changeset publish --tag latest
+          publish: npx turbo run build && npx changeset publish
           version: npx changeset version
           title: "[Changesets ci] Auto release"
           commit: "chore: auto update packages version and changelog"
