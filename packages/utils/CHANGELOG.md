@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.6
+
+### Patch Changes
+
+- fdf6f9c: fix release ci
+
 ## 1.0.5
 
 ### Patch Changes
