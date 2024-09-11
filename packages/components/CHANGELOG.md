@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.7
+
+### Patch Changes
+
+- fa73576: fix release ci
+- Updated dependencies [fa73576]
+  - @fe-kit/utils@1.0.4
+
 ## 1.0.6
 
 ### Patch Changes

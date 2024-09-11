@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.4
+
+### Patch Changes
+
+- fa73576: fix release ci
+
 ## 1.0.3
 
 ### Patch Changes
