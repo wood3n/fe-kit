@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.5
+
+### Patch Changes
+
+- 3432164: fix version error to latest
+
 ## 1.0.4
 
 ### Patch Changes

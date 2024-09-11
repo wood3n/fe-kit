@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.8
+
+### Patch Changes
+
+- 3432164: fix version error to latest
+- Updated dependencies [3432164]
+  - @fe-kit/utils@1.0.5
+
 ## 1.0.7
 
 ### Patch Changes
