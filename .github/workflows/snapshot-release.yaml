@@ -30,7 +30,7 @@ jobs:
           run_install: true
 
       - name: Check changesets
-        run: npx changeset status --since=master
+        run: npx changeset status --since=origin/master
 
       - name: Snapshot release
         run: npx turbo run build && npx changeset version --snapshot beta && npx changeset publish --tag beta --no-git-tag
