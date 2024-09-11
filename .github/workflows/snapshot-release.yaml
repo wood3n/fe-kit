@@ -7,8 +7,8 @@ on:
 jobs:
   Release:
     name: SnapshotRelease
+    if: ${{ ! startsWith(github.event.pull_request.title, 'auto-changesets-release') }}
     runs-on: ubuntu-latest
-    if: ${{ ! startsWith(github.action.pull_request.title, '[Changesets ci]') }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4

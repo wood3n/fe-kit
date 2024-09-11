@@ -1,11 +1,10 @@
 name: Deploy Storybook to GitHub Pages
 
 on:
-  # Event for the workflow to run on
   workflow_dispatch:
   push:
     branches:
-      - "master" # Replace with the branch you want to deploy from
+      - "master"
     paths:
       - "packages/components/**"
 
