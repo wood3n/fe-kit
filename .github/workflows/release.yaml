@@ -11,6 +11,7 @@ jobs:
   Release:
     name: Release
     runs-on: ubuntu-latest
+    if: ${{ ! startsWith(github.action.pull_request.title, '[Changesets ci]') }}
     permissions:
       id-token: write
       contents: write
