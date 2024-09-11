@@ -1,0 +1,47 @@
+name: Release
+
+on:
+  workflow_dispatch:
+  push:
+    branches: master
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  Release:
+    name: Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write # needed for provenance data generation
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org/
+
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          version: 8.15.7
+          run_install: true
+
+      - name: Create release pull request
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          publish: npx turbo run build && npx changeset publish --tag latest
+          version: npx changeset version
+          title: "[Changesets ci] Auto release"
+          commit: "chore: auto update packages version and changelog"
+          createGithubReleases: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}

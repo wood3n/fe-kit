@@ -1,4 +1,4 @@
-name: Build and Publish Components Storybook to GitHub Pages
+name: Deploy Storybook to GitHub Pages
 
 on:
   # Event for the workflow to run on
@@ -36,14 +36,13 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 8
+          version: 8.15.7
           run_install: false
 
-      #👇 Add Storybook build and deploy to GitHub Pages as a step in the workflow
       - name: Deploy github pages
         uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
         with:
           install_command: pnpm install # default: npm ci
-          build_command: pnpm run build:components-site # default: npm run build-storybook
+          build_command: npx turbo run build-storybook # default: npm run build-storybook
           path: packages/components/storybook-static # default: dist/storybook
           checkout: false # default: true

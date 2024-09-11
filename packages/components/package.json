@@ -27,7 +27,8 @@
   "module": "./dist/es/index.js",
   "types": "./dist/types/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "CHANGELOG.md"
   ],
   "scripts": {
     "build": "modern build",
@@ -37,7 +38,7 @@
   "dependencies": {
     "@dnd-kit/core": "^6.1.0",
     "@dnd-kit/utilities": "^3.2.2",
-    "@fe-kit/utils": "1.0.3-alpha.0",
+    "@fe-kit/utils": "workspace:*",
     "@iconify/react": "^5.0.2",
     "clsx": "^2.1.1",
     "react-pdf": "^9.1.0"

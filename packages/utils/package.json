@@ -24,10 +24,18 @@
   "module": "./dist/es/index.js",
   "types": "./dist/types/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "CHANGELOG.md"
   ],
   "scripts": {
     "build": "modern build"
+  },
+  "dependencies": {
+    "@zxing/library": "^0.21.3",
+    "jsbarcode": "^3.11.6",
+    "jszip": "^3.10.1",
+    "p-queue": "^8.0.1",
+    "qr-code-styling": "1.6.0-rc.1"
   },
   "devDependencies": {
     "@modern-js/module-tools": "^2.58.0"

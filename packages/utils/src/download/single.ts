@@ -1,5 +1,5 @@
-import { createDownloadLink } from "./base/createDownloadLink";
-import { xhr as request, type XhrOptions } from "./base/xhr";
+import { createDownloadLink } from "../base/createDownloadLink";
+import { createXhr, type XhrOptions } from "../base/xhr";
 
 /**
  * async download by XMLHttpRequest
@@ -9,7 +9,7 @@ import { xhr as request, type XhrOptions } from "./base/xhr";
  */
 export const download = (url: string, options?: Pick<XhrOptions, "onProgress">) => {
   return new Promise<XMLHttpRequest>((resolve, reject) => {
-    const xhrInstance = request(url, {
+    const xhrInstance = createXhr(url, {
       method: "GET",
       responseType: "blob",
       onSuccess: (response: Blob) => {

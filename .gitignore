@@ -122,11 +122,12 @@ build_*
 es
 lib
 
+# packages/components storybook output
 *storybook.log
 storybook-static
 
-
-
-.nx/cache
-.nx/workspace-data
+# vercel preview deploy config
 .vercel
+
+# turborepo cache
+.turbo
