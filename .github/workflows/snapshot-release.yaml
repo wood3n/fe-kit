@@ -29,8 +29,15 @@ jobs:
           version: 8.15.7
           run_install: true
 
-      - name: Check changesets
-        run: npx changeset status --since=origin/master
+      - name: Check for changesets
+        id: changesets
+        run: |
+          if [ -n "$(git diff origin/master --name-only -- '*.changeset/*')" ]; then
+            echo "hasChangesets=true" >> $GITHUB_OUTPUT
+          else
+            echo "hasChangesets=false" >> $GITHUB_OUTPUT
+          fi
 
       - name: Snapshot release
+        if: steps.changesets.outputs.hasChangesets == 'true'
         run: npx turbo run build && npx changeset version --snapshot beta && npx changeset publish --tag beta --no-git-tag
