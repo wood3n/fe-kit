@@ -5,8 +5,8 @@ on:
     types: [opened, synchronize]
 
 jobs:
-  prePublish:
-    name: PrePublish
+  Release:
+    name: SnapshotRelease
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -29,5 +29,8 @@ jobs:
           version: 8.15.7
           run_install: true
 
+      - name: Check changesets
+        run: npx changeset status --since=master
+
       - name: Snapshot release
-        run: npx changeset version --snapshot beta && npx changeset publish --tag beta
+        run: npx turbo run build && npx changeset version --snapshot beta && npx changeset publish --tag beta --no-git-tag

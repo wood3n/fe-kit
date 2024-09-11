@@ -23,9 +23,8 @@
     "build:components-site": "npx turbo run build-storybook",
     "build:utils": "npx turbo run build --filter @fe-kit/utils",
     "coverage": "vitest run --coverage",
-    "dev:components": "turbo watch @fe-kit/components#dev",
+    "dev:components": "npx turbo watch @fe-kit/components#dev",
     "prepare": "is-ci || husky",
-    "publish-packages": "npx turbo run build && npx changeset version && npx changeset publish",
     "test": "vitest"
   },
   "lint-staged": {
