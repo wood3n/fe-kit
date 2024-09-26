@@ -29,9 +29,9 @@
     "test": "vitest"
   },
   "lint-staged": {
-    "**/*.{js,cjs,mjs,jsx,ts,tsx}": "eslint --fix",
-    "**/*.{json,md,mdx}": "prettier --write",
-    "**/*.{css,scss,sass,less}": "stylelint --fix"
+    "**/*.{js,cjs,mjs,jsx,ts,tsx}": "npx eslint --fix",
+    "**/*.{json,md,mdx}": "npx prettier --write",
+    "**/*.{css,scss,sass,less}": "npx stylelint --fix"
   },
   "devDependencies": {
     "@changesets/changelog-git": "^0.2.0",
