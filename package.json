@@ -29,12 +29,9 @@
     "test": "vitest"
   },
   "lint-staged": {
-    "**/*.{js,jsx,ts,tsx}": "prettier-eslint --write",
+    "**/*.{js,cjs,mjs,jsx,ts,tsx}": "eslint --fix",
     "**/*.{json,md,mdx}": "prettier --write",
-    "**/*.{css,scss,sass,less}": [
-      "prettier --write",
-      "stylelint --fix"
-    ]
+    "**/*.{css,scss,sass,less}": "stylelint --fix"
   },
   "devDependencies": {
     "@changesets/changelog-git": "^0.2.0",
@@ -59,11 +56,11 @@
     "is-ci": "^3.0.1",
     "lint-staged": "^15.2.7",
     "prettier": "^3.3.2",
-    "prettier-eslint-cli": "^8.0.1",
     "prettier-plugin-packagejson": "^2.5.1",
     "prettier-plugin-tailwindcss": "^0.6.5",
     "stylelint": "^16.8.1",
     "stylelint-config-standard": "^36.0.1",
+    "stylelint-order": "^6.0.4",
     "stylelint-prettier": "^5.0.2",
     "turbo": "^2.1.1",
     "typescript": "^5.5.2",
