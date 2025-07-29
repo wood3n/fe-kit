@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 
 import classNames from "clsx";
-import { format as formatSQL } from "sql-formatter";
+import sqlFormatter from "sql-formatter-plus";
 import Editor, { type EditorProps, loader, type OnMount } from "@monaco-editor/react";
 import { RiBrushLine, RiFullscreenExitLine, RiFullscreenLine } from "@remixicon/react";
 
@@ -30,19 +30,10 @@ const CodeEditor = ({ options, bordered = true, toolbarLeft, style, height, ...p
           let formatted: string;
 
           try {
-            formatted = formatSQL(original, {
-              language: "sql",
-              tabWidth: 2,
-              useTabs: false,
-              keywordCase: "upper",
-              dataTypeCase: "upper",
-              functionCase: "upper",
-              indentStyle: "standard",
-              logicalOperatorNewline: "before",
-              expressionWidth: 50,
-              denseOperators: false,
-              newlineBeforeSemicolon: false,
-              linesBetweenQueries: 2,
+            formatted = sqlFormatter.format(original, {
+              language: "sql", // Defaults to "sql"
+              uppercase: true, // Defaults to false
+              linesBetweenQueries: 2, // Defaults to 1
             });
           } catch (e) {
             console.warn(e);
