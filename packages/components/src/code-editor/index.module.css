@@ -1,0 +1,45 @@
+.codeEditor {
+  display: flex;
+  flex-direction: column;
+}
+
+.fullscreen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  padding: 24px;
+  background: #fff;
+  animation: fullscreenEnter 0.3s ease-in-out;
+}
+
+.fullscreenExit {
+  animation: fullscreenExit 0.3s ease-in-out;
+}
+
+@keyframes fullscreenEnter {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fullscreenExit {
+  100% {
+    transform: scale(0.9);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+}

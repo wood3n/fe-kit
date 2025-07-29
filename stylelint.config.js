@@ -8,6 +8,8 @@ export default {
     "order/properties-order": ["width", "height"],
     "block-no-empty": true,
     "color-hex-length": "short",
+    "selector-class-pattern": null,
+    "keyframes-name-pattern": null,
     "at-rule-no-unknown": [
       true,
       {
